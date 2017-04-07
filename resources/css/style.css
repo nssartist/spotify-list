@@ -1,0 +1,150 @@
+/*/// BOX SIZING FIX ///*/
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+html {
+    font-size: 62.5%;
+}
+/*/// CUSTOM STYLES ///*/
+#main-container {
+    width: 100%;
+    /*background-color: rgb(104, 0, 255);*/ /* light purple */
+    /*background-color: rgb(35, 2, 63);*/ /* deep purple */
+}
+/*--- TOP SEARCH BAR AREA ---*/
+#top-nav {
+    width: 100%;
+    background-color: rgb(35, 2, 63);
+    display: flex;
+    justify-content: center;
+}
+#nav-container {
+    width: 100%;
+    max-width: 120rem;
+    /*background-color: yellow;*/
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+/*--- LOGO ---*/
+#logo {
+    display: inline-block;
+    margin: 3rem 0;
+}
+#logo span {
+    font-family: Righteous, sans-serif;
+    font-size: 4rem;
+    color: rgb(255, 0, 171);
+}
+/*--- SEARCH AREA ---*/
+#search-container {
+    display: inline-flex;
+    align-items: center;
+}
+#search-box {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 1rem;
+}
+/* Input Search Box */
+
+#search-text {
+    height: 4rem;
+    border: none;
+    border-top-left-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+    padding-left: 2rem;
+}
+/*Search Close "X" */
+#close-btn {
+    height: 4rem;
+    width: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border-top-right-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+}
+/* Search button */
+#search-btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 4rem;
+    background-color: rgb(255,102,204);
+    border-radius: 2rem;
+}
+#search-btn i {
+    -moz-transform: scale(-1, 1);
+    -o-transform: scale(-1, 1);
+    -webkit-transform: scale(-1, 1);
+    transform: scale(-1, 1);
+    margin: 0 2.5rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*--- RESULTS TABLE AREA ---*/
+main {
+    width: 100%;
+    max-width: 120rem;
+    height: 50rem;
+    margin: 0 auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*/// CLEARFIX ///*/
+.clearfix:after {
+    content: "";
+    display: block;
+    clear: both;
+}
