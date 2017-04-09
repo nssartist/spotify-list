@@ -22,8 +22,6 @@ $(document).ready(function() {
         } 
     });
     
-    
-    
 /*
     Given an array of track data, create the HTML for a Bootstrap row for each.
     Append each "row" to the container in the body to display all tracks. 
@@ -58,8 +56,6 @@ $(document).ready(function() {
             
             $song_list.append(new_row);
         }
-        
-        
     };
 /*
     Given a search term as a string, query the Spotify API.
@@ -80,4 +76,3 @@ $(document).ready(function() {
     };
     
 });
-
