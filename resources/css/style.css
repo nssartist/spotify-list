@@ -114,9 +114,11 @@ html {
     display: flex;
     align-items: center;
 }
+.play a {
+    display: inline-block;
+}
 .play i {
     color: rgb(255, 0, 171);
-    cursor: pointer;
     transition: color .05s linear;
 }
 .play i:hover {
