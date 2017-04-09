@@ -9,10 +9,8 @@ $(document).ready(function() {
     
     /*/// FUNCTION -> search event handler ///*/
     $search_btn.on('click', function(){
-        
         /* Calling search function on user search */
         Trackster.searchTracksByTitle($search_query.val());
-        
     });
     
     /*/// IF USER PRESSSES ENTER KEY ///*/
@@ -22,45 +20,22 @@ $(document).ready(function() {
         } 
     });
     
-/*
-    Given an array of track data, create the HTML for a Bootstrap row for each.
-    Append each "row" to the container in the body to display all tracks. 
-*/
+    /* Given an array of track data, create the HTML for a Bootstrap row for each. Append each "row" to the container in the body to display all tracks. */
     Trackster.renderTracks = function(tracks) {
         var $song_list = $('#song-list');
         
+        /* Empty list for each new search event */
         $song_list.empty();
         
         for(var i = 0; i < tracks.length; i++) {
             var song = tracks[i];
-            var new_row = 
-                '<div class="row song-result">' + 
-                    '<div class="col-xs-1 col-xs-offset-1 play">' + 
-                        '<a href="' + song.preview_url + '" target="_blank">' +
-                            '<i class="fa fa-play-circle-o fa-2x"></i>' +
-                        '</a>' +
-                    '</div>' +
-                    '<div class="col-xs-4">' +
-                        song.name +
-                    '</div>' +
-                    '<div class="col-xs-2">' +
-                        song.artists[0].name +
-                    '</div>' +
-                    '<div class="col-xs-2">' +
-                        song.album.name +
-                    '</div>' +
-                    '<div class="col-xs-2">' +
-                        song.popularity +
-                    '</div>'
-                '</div>'
+            var new_row = '<div class="row song-result">' + '<div class="col-xs-1 col-xs-offset-1 play">' + '<a href="' + song.preview_url + '" target="_blank">' + '<i class="fa fa-play-circle-o fa-2x"></i>' + '</a>' + '</div>' + '<div class="col-xs-4">' + song.name + '</div>' + '<div class="col-xs-2">' + song.artists[0].name + '</div>' + '<div class="col-xs-2">' + song.album.name + '</div>' + '<div class="col-xs-2">' + song.popularity + '</div>' + '</div>'
             
             $song_list.append(new_row);
         }
     };
-/*
-    Given a search term as a string, query the Spotify API.
-    Render the tracks given in the API query response.
-*/
+    
+    /* Given a search term as a string, query the Spotify API. Render the tracks given in the API query response. */
     Trackster.searchTracksByTitle = function(title) {
         /* Call Spotify API with ajax method*/
         $.ajax({
@@ -74,5 +49,4 @@ $(document).ready(function() {
             }
         });
     };
-    
 });
