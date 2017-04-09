@@ -38,7 +38,7 @@ $(document).ready(function() {
             var new_row = 
                 '<div class="row song-result">' + 
                     '<div class="col-xs-1 col-xs-offset-1 play">' + 
-                        '<a href="https://p.scdn.co/mp3-preview/22bf10aff02db272f0a053dff5c0063d729df988?cid=null" target="_blank">' +
+                        '<a href="' + song.preview_url + '" target="_blank">' +
                             '<i class="fa fa-play-circle-o fa-2x"></i>' +
                         '</a>' +
                     '</div>' +
