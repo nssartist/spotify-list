@@ -14,6 +14,16 @@ $(document).ready(function() {
         Trackster.searchTracksByTitle($search_query.val());
         
     });
+    
+    /*/// IF USER PRESSSES ENTER KEY ///*/
+    $search_btn.keypress(function(e) {
+        if(e.which == 130) {
+            $search_btn.click();
+        } 
+    });
+    
+    
+    
 /*
     Given an array of track data, create the HTML for a Bootstrap row for each.
     Append each "row" to the container in the body to display all tracks. 
@@ -21,29 +31,30 @@ $(document).ready(function() {
     Trackster.renderTracks = function(tracks) {
         var $song_list = $('#song-list');
         
-        //$song_list.empty();
+        $song_list.empty();
         
         for(var i = 0; i < tracks.length; i++) {
             var song = tracks[i];
             var new_row = 
                 '<div class="row song-result">' + 
-                '<div class="col-xs-1 col-xs-offset-1 play">' + 
-                    '<a href="https://p.scdn.co/mp3-preview/22bf10aff02db272f0a053dff5c0063d729df988?cid=null" target="_blank">' +
-                        '<i class="fa fa-play-circle-o fa-2x"></i>' +
-                    '</a>' +
-                '</div>' +
-                '<div class="col-xs-4">' +
-                    'Hello' +
-                '</div>' +
-                '<div class="col-xs-2">' +
-                    'Adele' +
-                '</div>' +
-                '<div class="col-xs-2">' +
-                    'Hello' +
-                '</div>' +
-                '<div class="col-xs-2">' +
-                    '73' +
-                '</div>';
+                    '<div class="col-xs-1 col-xs-offset-1 play">' + 
+                        '<a href="https://p.scdn.co/mp3-preview/22bf10aff02db272f0a053dff5c0063d729df988?cid=null" target="_blank">' +
+                            '<i class="fa fa-play-circle-o fa-2x"></i>' +
+                        '</a>' +
+                    '</div>' +
+                    '<div class="col-xs-4">' +
+                        song.name +
+                    '</div>' +
+                    '<div class="col-xs-2">' +
+                        song.artists[0].name +
+                    '</div>' +
+                    '<div class="col-xs-2">' +
+                        song.album.name +
+                    '</div>' +
+                    '<div class="col-xs-2">' +
+                        song.popularity +
+                    '</div>'
+                '</div>'
             
             $song_list.append(new_row);
         }
