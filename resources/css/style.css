@@ -87,7 +87,19 @@ html {
     transform: scale(-1, 1);
 }
 
-
+/*/// LIST TITLE SECTION ///*/
+#track-header-container {
+    background-color: rgb(104, 0, 255);
+    padding: 1rem 0;
+}
+#song-header,
+#artist-header,
+#album-header,
+#popularity-header {
+    display: inline-block;
+    color: rgb(255, 255, 255);
+    font-family: 'Work Sans', sans-serif;
+}
 
 
 
